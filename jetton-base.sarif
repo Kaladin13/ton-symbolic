@@ -998,7 +998,26 @@
                                     "refs": [
                                         {
                                             "type": "org.usvm.test.resolver.TvmTestDataCellValue",
-                                            "data": "000101111000110101000101000110010000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+                                            "data": "000101111000110101000101000110010000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001",
+                                            "refs": [
+                                                {
+                                                    "type": "org.usvm.test.resolver.TvmTestDataCellValue",
+                                                    "refs": [
+                                                        {
+                                                            "type": "org.usvm.test.resolver.TvmTestDataCellValue"
+                                                        },
+                                                        {
+                                                            "type": "org.usvm.test.resolver.TvmTestDataCellValue"
+                                                        },
+                                                        {
+                                                            "type": "org.usvm.test.resolver.TvmTestDataCellValue"
+                                                        },
+                                                        {
+                                                            "type": "org.usvm.test.resolver.TvmTestDataCellValue"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
                                             "knownTypes": [
                                                 {
                                                     "type": {
@@ -1823,7 +1842,7 @@
                         }
                     ],
                     "message": {
-                        "text": "Reading of unexpected type: expected reading of org.ton.TlbIntegerLabelOfConcreteSize@5e0bba2f, but read TvmTestCellDataIntegerRead(bitSize=32, isSigned=false, endian=BigEndian)"
+                        "text": "Reading of unexpected type: expected reading of org.ton.TlbIntegerLabelOfConcreteSize@4cbb11e4, but read TvmTestCellDataIntegerRead(bitSize=32, isSigned=false, endian=BigEndian)"
                     },
                     "properties": {
                         "gasUsage": 1106,
@@ -1971,7 +1990,7 @@
                         }
                     ],
                     "message": {
-                        "text": "Reading of unexpected type: expected reading of org.ton.TlbIntegerLabelOfConcreteSize@41d53813, but read TvmTestCellDataIntegerRead(bitSize=32, isSigned=false, endian=BigEndian)"
+                        "text": "Reading of unexpected type: expected reading of org.ton.TlbIntegerLabelOfConcreteSize@326dbe25, but read TvmTestCellDataIntegerRead(bitSize=32, isSigned=false, endian=BigEndian)"
                     },
                     "properties": {
                         "gasUsage": 1106,
@@ -2114,7 +2133,7 @@
                         }
                     ],
                     "message": {
-                        "text": "Reading of unexpected type: expected reading of org.ton.TlbIntegerLabelOfConcreteSize@52f118aa, but read TvmTestCellDataIntegerRead(bitSize=32, isSigned=false, endian=BigEndian)"
+                        "text": "Reading of unexpected type: expected reading of org.ton.TlbIntegerLabelOfConcreteSize@647aa45c, but read TvmTestCellDataIntegerRead(bitSize=32, isSigned=false, endian=BigEndian)"
                     },
                     "properties": {
                         "gasUsage": 1106,
@@ -2257,7 +2276,7 @@
                         }
                     ],
                     "message": {
-                        "text": "Reading of unexpected type: expected reading of org.ton.TlbIntegerLabelOfConcreteSize@31cd0efa, but read TvmTestCellDataIntegerRead(bitSize=32, isSigned=false, endian=BigEndian)"
+                        "text": "Reading of unexpected type: expected reading of org.ton.TlbIntegerLabelOfConcreteSize@3922b297, but read TvmTestCellDataIntegerRead(bitSize=32, isSigned=false, endian=BigEndian)"
                     },
                     "properties": {
                         "gasUsage": 1106,
@@ -2400,7 +2419,7 @@
                         }
                     ],
                     "message": {
-                        "text": "Reading of unexpected type: expected reading of org.ton.TlbIntegerLabelOfConcreteSize@3294102e, but read TvmTestCellDataIntegerRead(bitSize=32, isSigned=false, endian=BigEndian)"
+                        "text": "Reading of unexpected type: expected reading of org.ton.TlbIntegerLabelOfConcreteSize@2d02a066, but read TvmTestCellDataIntegerRead(bitSize=32, isSigned=false, endian=BigEndian)"
                     },
                     "properties": {
                         "gasUsage": 1106,

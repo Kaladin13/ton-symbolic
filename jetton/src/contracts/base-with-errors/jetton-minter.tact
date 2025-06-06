@@ -22,10 +22,11 @@ contract JettonMinter(
     // however minting is possible only to basechain addresses
     // it is asserted inside the deploy function
     receive(msg: Mint) {
-        // let sd = 100;
-        // let xc = msg.tonAmount;
-        // let sdasd = sd / (xc - msg.tonAmount);
-        // require(sdasd > 0, "asd");
+        // NOTE: should fail with zero division
+        let var1 = 100;
+        let var2 = msg.tonAmount;
+        let zeroDivVar = var1 / (var2 - msg.tonAmount);
+        require(zeroDivVar > 0, "shouldn't reach");
 
         require(sender() == self.owner, "Incorrect sender");
         require(self.mintable, "Mint is closed");
@@ -57,6 +58,11 @@ contract JettonMinter(
     }
 
     receive(msg: ProvideWalletAddress) {
+        // NOTE: should fail with cell underflow since no ref in tlb
+        let ms = inMsg();
+        let ref1 = ms.loadRef();
+        require(ref1 == sender(), "should fail with cell underflow");
+
         let ownerWorkchain: Int = parseStdAddress(msg.ownerAddress.asSlice()).workchain;
 
         // If owner is basechain address, we can calculate jettonWallet
@@ -103,10 +109,11 @@ contract JettonMinter(
     }
 
     receive(msg: CloseMinting) {
-        // let sd = msg.toSlice();
-        // let xx = sd.loadAddress();
-        // // require(sender() == self.owner, "Incorrect sender");
-        // self.mintable = false;
+        // NOTE: should fail with integer underflow
+        let sd = msg.toSlice();
+        let xx = sd.loadUnit(256);
+        require(xx > 0, "should fail");
+        self.mintable = false;
         cashback(sender());
     }
 
