@@ -60,8 +60,8 @@ contract JettonMinter(
     receive(msg: ProvideWalletAddress) {
         // NOTE: should fail with cell underflow since no ref in tlb
         let ms = inMsg();
-        let ref1 = ms.loadRef();
-        require(ref1 == sender(), "should fail with cell underflow");
+        let ref1 = ms.loadMaybeRef();
+        require(ref1 != null, "should fail with cell underflow");
 
         let ownerWorkchain: Int = parseStdAddress(msg.ownerAddress.asSlice()).workchain;
 
@@ -111,7 +111,7 @@ contract JettonMinter(
     receive(msg: CloseMinting) {
         // NOTE: should fail with integer underflow
         let sd = msg.toSlice();
-        let xx = sd.loadUnit(256);
+        let xx = sd.loadUint(256);
         require(xx > 0, "should fail");
         self.mintable = false;
         cashback(sender());
