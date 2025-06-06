@@ -22,10 +22,10 @@ contract JettonMinter(
     // however minting is possible only to basechain addresses
     // it is asserted inside the deploy function
     receive(msg: Mint) {
-        let sd = 100;
-        let xc = msg.tonAmount;
-        let sdasd = sd / (xc - msg.tonAmount);
-        require(sdasd > 0, "asd");
+        // let sd = 100;
+        // let xc = msg.tonAmount;
+        // let sdasd = sd / (xc - msg.tonAmount);
+        // require(sdasd > 0, "asd");
 
         require(sender() == self.owner, "Incorrect sender");
         require(self.mintable, "Mint is closed");
@@ -103,11 +103,11 @@ contract JettonMinter(
     }
 
     receive(msg: CloseMinting) {
-        let sd = msg.toSlice();
-        let xx = sd.loadAddress();
-        // require(sender() == self.owner, "Incorrect sender");
-        self.mintable = false;
-        cashback(xx);
+        // let sd = msg.toSlice();
+        // let xx = sd.loadAddress();
+        // // require(sender() == self.owner, "Incorrect sender");
+        // self.mintable = false;
+        cashback(sender());
     }
 
     receive(msg: ClaimTON) {

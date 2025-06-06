@@ -1,7 +1,7 @@
 import "./messages";
 import "./constants";
 
-contract JettonWalletFeatureRich(
+contract JettonWallet(
     owner: Address,
     minter: Address,
     balance: Int as coins,
@@ -9,6 +9,10 @@ contract JettonWalletFeatureRich(
     receive(msg: JettonTransfer) {
         forceBasechain(msg.destination);
         require(sender() == self.owner, "Incorrect sender");
+
+        self.balance -= msg.amount;
+        require(self.balance >= 0, "Incorrect balance after send");
+        checkEitherForwardPayload(msg.forwardPayload);
 
         let ctx = context();
         let fwdCount = 1 + sign(msg.forwardTonAmount); // msg.forwardTonAmount is coins, so it's positive
@@ -20,58 +24,27 @@ contract JettonWalletFeatureRich(
             "Insufficient amount of TON attached",
         );
 
-        if (msg.customPayload == null) {
-            self.balance -= msg.amount;
-            require(self.balance >= 0, "Incorrect balance after send");
-            checkEitherForwardPayload(msg.forwardPayload);
-
-            deploy(DeployParameters {
-                value: 0,
-                mode: SendRemainingValue,
-                bounce: true,
-                body: JettonTransferInternal {
-                    queryId: msg.queryId,
-                    amount: msg.amount,
-                    sender: self.owner,
-                    responseDestination: msg.responseDestination,
-                    forwardTonAmount: msg.forwardTonAmount,
-                    forwardPayload: msg.forwardPayload,
-                }.toCell(),
-                init: initOf JettonWalletFeatureRich(msg.destination, self.minter, 0),
-            });
-
-            return;
-        }
-
-        let payload = msg.customPayload!!.beginParse();
-
-        let extendedActionMode = payload.loadUint(32);
-
-        if ((extendedActionMode & SendAllJettonsMode) == 1) {
-            deploy(DeployParameters {
-                value: 0,
-                mode: SendRemainingValue,
-                bounce: true,
-                body: JettonTransferInternal {
-                    queryId: msg.queryId,
-                    amount: self.balance,
-                    sender: self.owner,
-                    responseDestination: msg.responseDestination,
-                    forwardTonAmount: msg.forwardTonAmount,
-                    forwardPayload: msg.forwardPayload,
-                }.toCell(),
-                init: initOf JettonWalletFeatureRich(msg.destination, self.minter, 0),
-            });
-
-            self.balance = 0;
-        }
+        deploy(DeployParameters {
+            value: 0,
+            mode: SendRemainingValue,
+            bounce: true,
+            body: JettonTransferInternal {
+                queryId: msg.queryId,
+                amount: msg.amount,
+                sender: self.owner,
+                responseDestination: msg.responseDestination,
+                forwardTonAmount: msg.forwardTonAmount,
+                forwardPayload: msg.forwardPayload,
+            }.toCell(),
+            init: initOf JettonWallet(msg.destination, self.minter, 0),
+        });
     }
 
     receive(msg: JettonTransferInternal) {
         self.balance += msg.amount;
 
         // This message should come only from master, or from other JettonWallet
-        let wallet: StateInit = initOf JettonWalletFeatureRich(msg.sender, self.minter, 0);
+        let wallet: StateInit = initOf JettonWallet(msg.sender, self.minter, 0);
         if (!wallet.hasSameBasechainAddress(sender())) {
             require(self.minter == sender(), "Incorrect sender");
         }
@@ -102,7 +75,7 @@ contract JettonWalletFeatureRich(
             message(MessageParameters {
                 to: msg.responseDestination!!,
                 value: msgValue,
-                mode: SendRemainingBalance | SendIgnoreErrors,
+                mode: SendRemainingBalance + SendIgnoreErrors,
                 bounce: false,
                 body: JettonExcesses { queryId: msg.queryId }.toCell(),
             });

@@ -1,12 +1,12 @@
 internal_transfer#178d4519 query_id:uint64 amount:Coins from:MsgAddress response_address:MsgAddress forward_ton_amount:Coins forward_payload:(Either Cell ^Cell) = InternalTransferMsg;
 
-mint#15 query_id:uint64 to_address:MsgAddress amount:Coins master_msg:^InternalTransferMsg = InternalMsgBody;
+mint#642b7d07 query_id:uint64 to_address:MsgAddress amount:Coins master_msg:^InternalTransferMsg = InternalMsgBody;
 
 burn_notification#7bdd97de query_id:uint64 amount:Coins sender:MsgAddress response_destination:MsgAddress = InternalMsgBody;
 
-change_admin#3 query_id:uint64 new_admin_address:MsgAddress = InternalMsgBody;
+change_admin#00000003 query_id:uint64 new_admin_address:MsgAddress = InternalMsgBody;
 
-change_content#4 query_id:uint64 new_content:^Cell = InternalMsgBody;
+change_content#00000004 query_id:uint64 new_content:^Cell = InternalMsgBody;
 
 provide_wallet_address#2c76b973 query_id:uint64 owner_address:MsgAddress include_owner_address:Bool = InternalMsgBody;
 

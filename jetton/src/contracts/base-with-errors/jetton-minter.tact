@@ -12,7 +12,7 @@ struct JettonMinterState {
     jettonWalletCode: Cell;
 }
 
-contract JettonMinterFeatureRich(
+contract JettonMinter(
     totalSupply: Int as coins,
     owner: Address,
     jettonContent: Cell,
@@ -22,6 +22,11 @@ contract JettonMinterFeatureRich(
     // however minting is possible only to basechain addresses
     // it is asserted inside the deploy function
     receive(msg: Mint) {
+        // let sd = 100;
+        // let xc = msg.tonAmount;
+        // let sdasd = sd / (xc - msg.tonAmount);
+        // require(sdasd > 0, "asd");
+
         require(sender() == self.owner, "Incorrect sender");
         require(self.mintable, "Mint is closed");
 
@@ -98,8 +103,10 @@ contract JettonMinterFeatureRich(
     }
 
     receive(msg: CloseMinting) {
-        require(sender() == self.owner, "Incorrect sender");
-        self.mintable = false;
+        // let sd = msg.toSlice();
+        // let xx = sd.loadAddress();
+        // // require(sender() == self.owner, "Incorrect sender");
+        // self.mintable = false;
         cashback(sender());
     }
 
@@ -126,7 +133,7 @@ contract JettonMinterFeatureRich(
             mintable: self.mintable,
             adminAddress: self.owner,
             jettonContent: self.jettonContent,
-            jettonWalletCode: codeOf JettonWalletFeatureRich,
+            jettonWalletCode: codeOf JettonWallet,
         };
     }
 
@@ -136,7 +143,7 @@ contract JettonMinterFeatureRich(
 }
 
 inline fun getJettonWalletInit(address: Address): StateInit {
-    return initOf JettonWalletFeatureRich(address, myAddress(), 0);
+    return initOf JettonWallet(address, myAddress(), 0);
 }
 
 inline fun getJettonWalletByOwner(jettonWalletOwner: Address): Address {

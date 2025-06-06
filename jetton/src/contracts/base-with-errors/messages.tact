@@ -17,12 +17,12 @@ struct MaybeAddress {
     address: Address?;
 }
 
-//=======================================================================
-// TEP - 74
-// https://github.com/ton-blockchain/TEPs/blob/master/text/0074-jettons-standard.md
+message(4) JettonUpdateContent {
+    queryId: Int as uint64;
+    content: Cell;
+}
 
-const JettonTransferOpcode: Int = 0xf8a7ea5;
-message(JettonTransferOpcode) JettonTransfer {
+message(0xf8a7ea5) JettonTransfer {
     queryId: Int as uint64;
     amount: Int as coins;
     destination: Address;
@@ -32,12 +32,13 @@ message(JettonTransferOpcode) JettonTransfer {
     forwardPayload: Slice as remaining;
 }
 
-const JettonBurnOpcode: Int = 0x595f07bc;
-message(JettonBurnOpcode) JettonBurn {
+message(0x178d4519) JettonTransferInternal {
     queryId: Int as uint64;
     amount: Int as coins;
+    sender: Address;
     responseDestination: Address?;
-    customPayload: Cell?;
+    forwardTonAmount: Int as coins;
+    forwardPayload: Slice as remaining;
 }
 
 message(0x7362d09c) JettonNotification {
@@ -47,18 +48,11 @@ message(0x7362d09c) JettonNotification {
     forwardPayload: Slice as remaining;
 }
 
-message(0xd53276db) JettonExcesses {
-    queryId: Int as uint64;
-}
-
-const JettonTransferInternalOpcode: Int = 0x178d4519;
-message(JettonTransferInternalOpcode) JettonTransferInternal {
+message(0x595f07bc) JettonBurn {
     queryId: Int as uint64;
     amount: Int as coins;
-    sender: Address;
     responseDestination: Address?;
-    forwardTonAmount: Int as coins;
-    forwardPayload: Slice as remaining;
+    customPayload: Cell?;
 }
 
 message(0x7bdd97de) JettonBurnNotification {
@@ -68,8 +62,9 @@ message(0x7bdd97de) JettonBurnNotification {
     responseDestination: Address?;
 }
 
-// ============== TEP-89: Jetton Wallet Discovery ==============
-// https://github.com/ton-blockchain/TEPs/blob/master/text/0089-jetton-wallet-discovery.md
+message(0xd53276db) JettonExcesses {
+    queryId: Int as uint64;
+}
 
 message(0x2c76b973) ProvideWalletAddress {
     queryId: Int as uint64;
@@ -81,57 +76,22 @@ const TakeWalletAddressOpcode: Int = 0xd1735400;
 message(TakeWalletAddressOpcode) TakeWalletAddress {
     queryId: Int as uint64;
     walletAddress: Address;
-    ownerAddress: Cell?; // It is Maybe ^Address, just encoded it like this
-}
-
-//=======================================================================
-// Stable
-
-message(0xd372158c) TopUp {
-    queryId: Int as uint64;
-}
-
-const SetStatusOpcode: Int = 0xeed236d3;
-message(SetStatusOpcode) SetStatus {
-    queryId: Int as uint64;
-    status: Int as uint4;
+    ownerAddress: Cell?; //It is Maybe ^Address, just encoded it like this
 }
 
 message(0x642b7d07) Mint {
     queryId: Int as uint64;
-    toAddress: Address;
+    receiver: Address;
     tonAmount: Int as coins;
-    masterMsg: JettonTransferInternal;
+    mintMessage: JettonTransferInternal;
 }
 
-message(0x6501f354) ChangeAdmin {
+message(22) CloseMinting {}
+
+message(3) ChangeOwner {
     queryId: Int as uint64;
-    newAdminAddress: Address;
+    newOwner: Address;
 }
-
-message(0xfb88e119) ClaimAdmin {
-    queryId: Int as uint64;
-}
-
-message(0x235caf52) CallTo {
-    queryId: Int as uint64;
-    toAddress: Address;
-    tonAmount: Int as coins;
-    masterMsg: Cell;
-}
-
-message(0x2508d66a) Upgrade {
-    queryId: Int as uint64;
-    newData: Cell;
-    newCode: Cell;
-}
-
-message(0xcb862902) ChangeMetadataUri {
-    queryId: Int as uint64;
-    metadata: Slice as remaining;
-}
-
-// ============== Additional messages ==============
 
 // provide_wallet_balance#7ac8d559 receiver:MsgAddress include_verify_info:Bool = InternalMsgBody
 message(0x7ac8d559) ProvideWalletBalance {
@@ -150,4 +110,9 @@ struct VerifyInfo {
 message(0xca77fdc2) TakeWalletBalance {
     balance: Int as coins;
     verifyInfo: VerifyInfo?;
+}
+
+// claim_ton#0393b1ce receiver:MsgAddress = InternalMsgBody
+message(0x0393b1ce) ClaimTON {
+    receiver: Address;
 }
