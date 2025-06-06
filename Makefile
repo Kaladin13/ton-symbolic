@@ -21,4 +21,4 @@ clean:
 
 parse-tlb:
 	rm -f types1.json
-	./tsa/resources/tlbc -j ./tsa/resources/block.tlb internal.tlb > types1.json
+	./tlbc -j block.tlb internal.tlb > types1.json
