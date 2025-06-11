@@ -5,7 +5,7 @@
         {
             "properties": {
                 "coverage": {
-                    "0": 52.57048
+                    "0": 48.922054
                 }
             },
             "results": [
@@ -111,6 +111,38 @@
                             "createdLt": "0",
                             "createdAt": "0"
                         },
+                        "rootContractInitialC4": {
+                            "type": "org.usvm.test.resolver.TvmTestDataCellValue",
+                            "data": "00001000000000001000110100001101010001011000000011001101100011110000100101010010001010111110011111000000001110010000101001111010011000110010101111011010010010101001100100101001000111000100001101011011011101100111110010010101001101100111111010111110011110001110100110101111",
+                            "refs": [
+                                {
+                                    "type": "org.usvm.test.resolver.TvmTestDataCellValue"
+                                }
+                            ],
+                            "knownTypes": [
+                                {
+                                    "type": {
+                                        "type": "org.usvm.test.resolver.TvmTestCellDataCoinsRead"
+                                    },
+                                    "offset": 0
+                                },
+                                {
+                                    "type": {
+                                        "type": "org.usvm.test.resolver.TvmTestCellDataMsgAddrRead"
+                                    },
+                                    "offset": 4
+                                },
+                                {
+                                    "type": {
+                                        "type": "org.usvm.test.resolver.TvmTestCellDataIntegerRead",
+                                        "bitSize": 1,
+                                        "isSigned": true,
+                                        "endian": "BigEndian"
+                                    },
+                                    "offset": 271
+                                }
+                            ]
+                        },
                         "resultStack": [
                             "0"
                         ]
@@ -129,129 +161,7 @@
                                                     {
                                                         "fullyQualifiedName": "Lambda",
                                                         "properties": {
-                                                            "stmt": "artificial_exit#11"
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    "locations": [
-                                        {
-                                            "location": {
-                                                "logicalLocations": [
-                                                    {
-                                                        "decoratedName": "0",
-                                                        "properties": {
-                                                            "stmt": "IFJMP#46"
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    "locations": [
-                                        {
-                                            "location": {
-                                                "logicalLocations": [
-                                                    {
-                                                        "fullyQualifiedName": "Lambda",
-                                                        "properties": {
-                                                            "stmt": "DICTIGETJMPZ#2"
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ],
-                    "level": "error",
-                    "locations": [
-                        {
-                            "logicalLocations": [
-                                {
-                                    "decoratedName": "0"
-                                }
-                            ]
-                        }
-                    ],
-                    "message": {
-                        "text": "TvmFailure(exit=TVM user defined error with exit code 9215, type=UnknownError, phase=COMPUTE_PHASE)"
-                    },
-                    "properties": {
-                        "gasUsage": 1673,
-                        "usedParameters": {
-                            "type": "recvInternalInput",
-                            "srcAddress": {
-                                "cell": {
-                                    "data": "100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
-                                }
-                            },
-                            "msgBody": {
-                                "cell": {
-                                    "data": "000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000",
-                                    "refs": [
-                                        {
-                                            "type": "org.usvm.test.resolver.TvmTestDataCellValue"
-                                        }
-                                    ],
-                                    "knownTypes": [
-                                        {
-                                            "type": {
-                                                "type": "org.usvm.test.resolver.TvmTestCellDataIntegerRead",
-                                                "bitSize": 32,
-                                                "isSigned": false,
-                                                "endian": "BigEndian"
-                                            },
-                                            "offset": 0
-                                        },
-                                        {
-                                            "type": {
-                                                "type": "org.usvm.test.resolver.TvmTestCellDataIntegerRead",
-                                                "bitSize": 64,
-                                                "isSigned": false,
-                                                "endian": "BigEndian"
-                                            },
-                                            "offset": 32
-                                        }
-                                    ]
-                                }
-                            },
-                            "msgValue": "73786976294838206464",
-                            "bounce": false,
-                            "bounced": false,
-                            "ihrDisabled": false,
-                            "ihrFee": "0",
-                            "fwdFee": "0",
-                            "createdLt": "0",
-                            "createdAt": "0"
-                        },
-                        "resultStack": [
-                            "0"
-                        ]
-                    },
-                    "ruleId": "user-defined-error"
-                },
-                {
-                    "codeFlows": [
-                        {
-                            "threadFlows": [
-                                {
-                                    "locations": [
-                                        {
-                                            "location": {
-                                                "logicalLocations": [
-                                                    {
-                                                        "fullyQualifiedName": "Lambda",
-                                                        "properties": {
-                                                            "stmt": "artificial_exit#12"
+                                                            "stmt": "artificial_exit#6"
                                                         }
                                                     }
                                                 ]
@@ -305,10 +215,10 @@
                         }
                     ],
                     "message": {
-                        "text": "TvmFailure(exit=TVM user defined error with exit code 17704, type=UnknownError, phase=COMPUTE_PHASE)"
+                        "text": "Reading switch with TvmTestCellDataMaybeConstructorBitRead is forbidden"
                     },
                     "properties": {
-                        "gasUsage": 1542,
+                        "gasUsage": 1360,
                         "usedParameters": {
                             "type": "recvInternalInput",
                             "srcAddress": {
@@ -371,409 +281,51 @@
                             "createdLt": "0",
                             "createdAt": "0"
                         },
-                        "resultStack": [
-                            "0"
-                        ]
-                    },
-                    "ruleId": "user-defined-error"
-                },
-                {
-                    "codeFlows": [
-                        {
-                            "threadFlows": [
+                        "rootContractInitialC4": {
+                            "type": "org.usvm.test.resolver.TvmTestDataCellValue",
+                            "data": "00001000000000001000110100001101010001011000000011001101100011110000100101010010001010111110011111000000001110010000101001111010011000110010101111011010010010101001100100101001000111000100001101011011011101100111110010010101001101100111111010111110011110001110100110101111",
+                            "refs": [
                                 {
-                                    "locations": [
-                                        {
-                                            "location": {
-                                                "logicalLocations": [
-                                                    {
-                                                        "fullyQualifiedName": "Lambda",
-                                                        "properties": {
-                                                            "stmt": "artificial_exit#47"
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
+                                    "type": "org.usvm.test.resolver.TvmTestDataCellValue"
+                                }
+                            ],
+                            "knownTypes": [
+                                {
+                                    "type": {
+                                        "type": "org.usvm.test.resolver.TvmTestCellDataCoinsRead"
+                                    },
+                                    "offset": 0
                                 },
                                 {
-                                    "locations": [
-                                        {
-                                            "location": {
-                                                "logicalLocations": [
-                                                    {
-                                                        "fullyQualifiedName": "Lambda",
-                                                        "properties": {
-                                                            "stmt": "implicit RET#3"
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
+                                    "type": {
+                                        "type": "org.usvm.test.resolver.TvmTestCellDataMsgAddrRead"
+                                    },
+                                    "offset": 4
                                 },
                                 {
-                                    "locations": [
-                                        {
-                                            "location": {
-                                                "logicalLocations": [
-                                                    {
-                                                        "fullyQualifiedName": "Lambda",
-                                                        "properties": {
-                                                            "stmt": "artificial_execute_TvmOrdContinuation(stmt=TvmStackBasicPopInst(location=Lambda:#0, i=0), sourceCell=TvmCell(data=TvmCellData(bits=001100000011001001110000), refs=[]), savelist=TvmRegisterSavelist(c0=null, c1=null, c2=null, c3=null, c4=null, c5=null, c7=null), stack=null, nargs=null)#45"
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    "locations": [
-                                        {
-                                            "location": {
-                                                "logicalLocations": [
-                                                    {
-                                                        "fullyQualifiedName": "Lambda",
-                                                        "properties": {
-                                                            "stmt": "implicit RET#2"
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    "locations": [
-                                        {
-                                            "location": {
-                                                "logicalLocations": [
-                                                    {
-                                                        "fullyQualifiedName": "Lambda",
-                                                        "properties": {
-                                                            "stmt": "artificial_execute_TvmOrdContinuation(stmt=TvmAppAddrLdmsgaddrInst(location=Lambda:#0), sourceCell=TvmCell(data=TvmCellData(bits=111110100100000000000001), refs=[]), savelist=TvmRegisterSavelist(c0=null, c1=null, c2=null, c3=null, c4=null, c5=null, c7=null), stack=null, nargs=null)#7"
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    "locations": [
-                                        {
-                                            "location": {
-                                                "logicalLocations": [
-                                                    {
-                                                        "decoratedName": "0",
-                                                        "properties": {
-                                                            "stmt": "IFJMPREF#42"
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    "locations": [
-                                        {
-                                            "location": {
-                                                "logicalLocations": [
-                                                    {
-                                                        "fullyQualifiedName": "Lambda",
-                                                        "properties": {
-                                                            "stmt": "DICTIGETJMPZ#2"
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
+                                    "type": {
+                                        "type": "org.usvm.test.resolver.TvmTestCellDataIntegerRead",
+                                        "bitSize": 1,
+                                        "isSigned": true,
+                                        "endian": "BigEndian"
+                                    },
+                                    "offset": 271
                                 }
                             ]
-                        }
-                    ],
-                    "level": "error",
-                    "locations": [
-                        {
-                            "logicalLocations": [
-                                {
-                                    "decoratedName": "0"
-                                }
-                            ]
-                        }
-                    ],
-                    "message": {
-                        "text": "TvmFailure(exit=TVM user defined error with exit code 10363, type=UnknownError, phase=COMPUTE_PHASE)"
-                    },
-                    "properties": {
-                        "gasUsage": 3225,
-                        "usedParameters": {
-                            "type": "recvInternalInput",
-                            "srcAddress": {
-                                "cell": {
-                                    "data": "100111111110000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
-                                }
-                            },
-                            "msgBody": {
-                                "cell": {
-                                    "data": "0111101111011101100101111101111000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-                                    "knownTypes": [
-                                        {
-                                            "type": {
-                                                "type": "org.usvm.test.resolver.TvmTestCellDataIntegerRead",
-                                                "bitSize": 32,
-                                                "isSigned": false,
-                                                "endian": "BigEndian"
-                                            },
-                                            "offset": 0
-                                        },
-                                        {
-                                            "type": {
-                                                "type": "org.usvm.test.resolver.TvmTestCellDataIntegerRead",
-                                                "bitSize": 64,
-                                                "isSigned": false,
-                                                "endian": "BigEndian"
-                                            },
-                                            "offset": 32
-                                        },
-                                        {
-                                            "type": {
-                                                "type": "org.usvm.test.resolver.TvmTestCellDataCoinsRead"
-                                            },
-                                            "offset": 96
-                                        },
-                                        {
-                                            "type": {
-                                                "type": "org.usvm.test.resolver.TvmTestCellDataMsgAddrRead"
-                                            },
-                                            "offset": 100
-                                        },
-                                        {
-                                            "type": {
-                                                "type": "org.usvm.test.resolver.TvmTestCellDataMsgAddrRead"
-                                            },
-                                            "offset": 367
-                                        }
-                                    ]
-                                }
-                            },
-                            "msgValue": "73786976294838206464",
-                            "bounce": false,
-                            "bounced": false,
-                            "ihrDisabled": false,
-                            "ihrFee": "2361183241434822606848",
-                            "fwdFee": "664613997892457936451903530140172288",
-                            "createdLt": "0",
-                            "createdAt": "0"
                         },
                         "resultStack": [
-                            "0"
-                        ]
-                    },
-                    "ruleId": "user-defined-error"
-                },
-                {
-                    "codeFlows": [
-                        {
-                            "threadFlows": [
-                                {
-                                    "locations": [
-                                        {
-                                            "location": {
-                                                "logicalLocations": [
-                                                    {
-                                                        "fullyQualifiedName": "Lambda",
-                                                        "properties": {
-                                                            "stmt": "artificial_exit#47"
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    "locations": [
-                                        {
-                                            "location": {
-                                                "logicalLocations": [
-                                                    {
-                                                        "fullyQualifiedName": "Lambda",
-                                                        "properties": {
-                                                            "stmt": "implicit RET#5"
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    "locations": [
-                                        {
-                                            "location": {
-                                                "logicalLocations": [
-                                                    {
-                                                        "fullyQualifiedName": "Lambda",
-                                                        "properties": {
-                                                            "stmt": "artificial_execute_TvmOrdContinuation(stmt=TvmStackBasicPushInst(location=Lambda:#0, i=0), sourceCell=TvmCell(data=TvmCellData(bits=00100000011011101111001011010000100000000001001110111010), refs=[]), savelist=TvmRegisterSavelist(c0=null, c1=null, c2=null, c3=null, c4=null, c5=null, c7=null), stack=null, nargs=null)#45"
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    "locations": [
-                                        {
-                                            "location": {
-                                                "logicalLocations": [
-                                                    {
-                                                        "fullyQualifiedName": "Lambda",
-                                                        "properties": {
-                                                            "stmt": "implicit RET#2"
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    "locations": [
-                                        {
-                                            "location": {
-                                                "logicalLocations": [
-                                                    {
-                                                        "fullyQualifiedName": "Lambda",
-                                                        "properties": {
-                                                            "stmt": "artificial_execute_TvmOrdContinuation(stmt=TvmAppAddrLdmsgaddrInst(location=Lambda:#0), sourceCell=TvmCell(data=TvmCellData(bits=111110100100000000000001), refs=[]), savelist=TvmRegisterSavelist(c0=null, c1=null, c2=null, c3=null, c4=null, c5=null, c7=null), stack=null, nargs=null)#7"
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    "locations": [
-                                        {
-                                            "location": {
-                                                "logicalLocations": [
-                                                    {
-                                                        "decoratedName": "0",
-                                                        "properties": {
-                                                            "stmt": "IFJMPREF#42"
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    "locations": [
-                                        {
-                                            "location": {
-                                                "logicalLocations": [
-                                                    {
-                                                        "fullyQualifiedName": "Lambda",
-                                                        "properties": {
-                                                            "stmt": "DICTIGETJMPZ#2"
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ],
-                    "level": "error",
-                    "locations": [
-                        {
-                            "logicalLocations": [
-                                {
-                                    "decoratedName": "0"
-                                }
-                            ]
-                        }
-                    ],
-                    "message": {
-                        "text": "TvmFailure(exit=TVM user defined error with exit code 10363, type=UnknownError, phase=COMPUTE_PHASE)"
-                    },
-                    "properties": {
-                        "gasUsage": 3277,
-                        "usedParameters": {
-                            "type": "recvInternalInput",
-                            "srcAddress": {
+                            "92233720368547758080",
+                            "0",
+                            {
+                                "type": "org.usvm.test.resolver.TvmTestSliceValue",
                                 "cell": {
                                     "data": "100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
                                 }
                             },
-                            "msgBody": {
-                                "cell": {
-                                    "data": "0111101111011101100101111101111000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-                                    "knownTypes": [
-                                        {
-                                            "type": {
-                                                "type": "org.usvm.test.resolver.TvmTestCellDataIntegerRead",
-                                                "bitSize": 32,
-                                                "isSigned": false,
-                                                "endian": "BigEndian"
-                                            },
-                                            "offset": 0
-                                        },
-                                        {
-                                            "type": {
-                                                "type": "org.usvm.test.resolver.TvmTestCellDataIntegerRead",
-                                                "bitSize": 64,
-                                                "isSigned": false,
-                                                "endian": "BigEndian"
-                                            },
-                                            "offset": 32
-                                        },
-                                        {
-                                            "type": {
-                                                "type": "org.usvm.test.resolver.TvmTestCellDataCoinsRead"
-                                            },
-                                            "offset": 96
-                                        },
-                                        {
-                                            "type": {
-                                                "type": "org.usvm.test.resolver.TvmTestCellDataMsgAddrRead"
-                                            },
-                                            "offset": 100
-                                        },
-                                        {
-                                            "type": {
-                                                "type": "org.usvm.test.resolver.TvmTestCellDataMsgAddrRead"
-                                            },
-                                            "offset": 367
-                                        }
-                                    ]
-                                }
-                            },
-                            "msgValue": "73786976294838206464",
-                            "bounce": false,
-                            "bounced": false,
-                            "ihrDisabled": false,
-                            "ihrFee": "0",
-                            "fwdFee": "0",
-                            "createdLt": "0",
-                            "createdAt": "0"
-                        },
-                        "resultStack": [
                             "0"
                         ]
                     },
-                    "ruleId": "user-defined-error"
+                    "ruleId": "unexpected-type-for-switch"
                 },
                 {
                     "codeFlows": [
@@ -937,7 +489,7 @@
                         }
                     ],
                     "message": {
-                        "text": "TvmFailure(exit=TVM integer out of expected range, exit code: 5, type=UnknownError, phase=COMPUTE_PHASE)"
+                        "text": "TvmFailure(exit=TVM integer out of expected range, exit code: 5, phase=COMPUTE_PHASE)"
                     },
                     "properties": {
                         "gasUsage": 5681,
@@ -1000,134 +552,43 @@
                             "createdLt": "0",
                             "createdAt": "0"
                         },
-                        "resultStack": [
-                            "0"
-                        ]
-                    },
-                    "ruleId": "integer-out-of-range"
-                },
-                {
-                    "codeFlows": [
-                        {
-                            "threadFlows": [
+                        "rootContractInitialC4": {
+                            "type": "org.usvm.test.resolver.TvmTestDataCellValue",
+                            "data": "00001000000000001000110100001101010001011000000011001101100011110000100101010010001010111110011111000000001110010000101001111010011000110010101111011010010010101001100100101001000111000100001101011011011101100111110010010101001101100111111010111110011110001110100110101111",
+                            "refs": [
                                 {
-                                    "locations": [
-                                        {
-                                            "location": {
-                                                "logicalLocations": [
-                                                    {
-                                                        "fullyQualifiedName": "Lambda",
-                                                        "properties": {
-                                                            "stmt": "artificial_exit#10"
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
+                                    "type": "org.usvm.test.resolver.TvmTestDataCellValue"
+                                }
+                            ],
+                            "knownTypes": [
+                                {
+                                    "type": {
+                                        "type": "org.usvm.test.resolver.TvmTestCellDataCoinsRead"
+                                    },
+                                    "offset": 0
                                 },
                                 {
-                                    "locations": [
-                                        {
-                                            "location": {
-                                                "logicalLocations": [
-                                                    {
-                                                        "decoratedName": "0",
-                                                        "properties": {
-                                                            "stmt": "IFJMP#50"
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
+                                    "type": {
+                                        "type": "org.usvm.test.resolver.TvmTestCellDataMsgAddrRead"
+                                    },
+                                    "offset": 4
                                 },
                                 {
-                                    "locations": [
-                                        {
-                                            "location": {
-                                                "logicalLocations": [
-                                                    {
-                                                        "fullyQualifiedName": "Lambda",
-                                                        "properties": {
-                                                            "stmt": "DICTIGETJMPZ#2"
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
+                                    "type": {
+                                        "type": "org.usvm.test.resolver.TvmTestCellDataIntegerRead",
+                                        "bitSize": 1,
+                                        "isSigned": true,
+                                        "endian": "BigEndian"
+                                    },
+                                    "offset": 271
                                 }
                             ]
-                        }
-                    ],
-                    "level": "error",
-                    "locations": [
-                        {
-                            "logicalLocations": [
-                                {
-                                    "decoratedName": "0"
-                                }
-                            ]
-                        }
-                    ],
-                    "message": {
-                        "text": "TvmFailure(exit=TVM user defined error with exit code 9215, type=UnknownError, phase=COMPUTE_PHASE)"
-                    },
-                    "properties": {
-                        "gasUsage": 1759,
-                        "usedParameters": {
-                            "type": "recvInternalInput",
-                            "srcAddress": {
-                                "cell": {
-                                    "data": "100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
-                                }
-                            },
-                            "msgBody": {
-                                "cell": {
-                                    "data": "000000000000000000000000000000110000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-                                    "knownTypes": [
-                                        {
-                                            "type": {
-                                                "type": "org.usvm.test.resolver.TvmTestCellDataIntegerRead",
-                                                "bitSize": 32,
-                                                "isSigned": false,
-                                                "endian": "BigEndian"
-                                            },
-                                            "offset": 0
-                                        },
-                                        {
-                                            "type": {
-                                                "type": "org.usvm.test.resolver.TvmTestCellDataIntegerRead",
-                                                "bitSize": 64,
-                                                "isSigned": false,
-                                                "endian": "BigEndian"
-                                            },
-                                            "offset": 32
-                                        },
-                                        {
-                                            "type": {
-                                                "type": "org.usvm.test.resolver.TvmTestCellDataMsgAddrRead"
-                                            },
-                                            "offset": 96
-                                        }
-                                    ]
-                                }
-                            },
-                            "msgValue": "73786976294838206464",
-                            "bounce": false,
-                            "bounced": false,
-                            "ihrDisabled": false,
-                            "ihrFee": "0",
-                            "fwdFee": "0",
-                            "createdLt": "0",
-                            "createdAt": "0"
                         },
                         "resultStack": [
                             "0"
                         ]
                     },
-                    "ruleId": "user-defined-error"
+                    "ruleId": "integer-out-of-range"
                 },
                 {
                     "codeFlows": [
@@ -1227,7 +688,7 @@
                         }
                     ],
                     "message": {
-                        "text": "TvmFailure(exit=TVM integer overflow, exit code: 4, type=UnknownError, phase=COMPUTE_PHASE)"
+                        "text": "TvmFailure(exit=TVM integer overflow, exit code: 4, phase=COMPUTE_PHASE)"
                     },
                     "properties": {
                         "gasUsage": 2006,
@@ -1334,994 +795,43 @@
                             "createdLt": "0",
                             "createdAt": "0"
                         },
+                        "rootContractInitialC4": {
+                            "type": "org.usvm.test.resolver.TvmTestDataCellValue",
+                            "data": "00001000000000001000110100001101010001011000000011001101100011110000100101010010001010111110011111000000001110010000101001111010011000110010101111011010010010101001100100101001000111000100001101011011011101100111110010010101001101100111111010111110011110001110100110101111",
+                            "refs": [
+                                {
+                                    "type": "org.usvm.test.resolver.TvmTestDataCellValue"
+                                }
+                            ],
+                            "knownTypes": [
+                                {
+                                    "type": {
+                                        "type": "org.usvm.test.resolver.TvmTestCellDataCoinsRead"
+                                    },
+                                    "offset": 0
+                                },
+                                {
+                                    "type": {
+                                        "type": "org.usvm.test.resolver.TvmTestCellDataMsgAddrRead"
+                                    },
+                                    "offset": 4
+                                },
+                                {
+                                    "type": {
+                                        "type": "org.usvm.test.resolver.TvmTestCellDataIntegerRead",
+                                        "bitSize": 1,
+                                        "isSigned": true,
+                                        "endian": "BigEndian"
+                                    },
+                                    "offset": 271
+                                }
+                            ]
+                        },
                         "resultStack": [
                             "0"
                         ]
                     },
                     "ruleId": "integer-overflow"
-                },
-                {
-                    "codeFlows": [
-                        {
-                            "threadFlows": [
-                                {
-                                    "locations": [
-                                        {
-                                            "location": {
-                                                "logicalLocations": [
-                                                    {
-                                                        "fullyQualifiedName": "Lambda",
-                                                        "properties": {
-                                                            "stmt": "artificial_exit#8"
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    "locations": [
-                                        {
-                                            "location": {
-                                                "logicalLocations": [
-                                                    {
-                                                        "decoratedName": "0",
-                                                        "properties": {
-                                                            "stmt": "IFJMPREF#58"
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    "locations": [
-                                        {
-                                            "location": {
-                                                "logicalLocations": [
-                                                    {
-                                                        "fullyQualifiedName": "Lambda",
-                                                        "properties": {
-                                                            "stmt": "DICTIGETJMPZ#2"
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ],
-                    "level": "error",
-                    "locations": [
-                        {
-                            "logicalLocations": [
-                                {
-                                    "decoratedName": "0"
-                                }
-                            ]
-                        }
-                    ],
-                    "message": {
-                        "text": "TvmFailure(exit=TVM user defined error with exit code 9215, type=UnknownError, phase=COMPUTE_PHASE)"
-                    },
-                    "properties": {
-                        "gasUsage": 1896,
-                        "usedParameters": {
-                            "type": "recvInternalInput",
-                            "srcAddress": {
-                                "cell": {
-                                    "data": "100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
-                                }
-                            },
-                            "msgBody": {
-                                "cell": {
-                                    "data": "00000011100100111011000111001110100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-                                    "knownTypes": [
-                                        {
-                                            "type": {
-                                                "type": "org.usvm.test.resolver.TvmTestCellDataIntegerRead",
-                                                "bitSize": 32,
-                                                "isSigned": false,
-                                                "endian": "BigEndian"
-                                            },
-                                            "offset": 0
-                                        },
-                                        {
-                                            "type": {
-                                                "type": "org.usvm.test.resolver.TvmTestCellDataMsgAddrRead"
-                                            },
-                                            "offset": 32
-                                        }
-                                    ]
-                                }
-                            },
-                            "msgValue": "73786976294838206464",
-                            "bounce": false,
-                            "bounced": false,
-                            "ihrDisabled": false,
-                            "ihrFee": "0",
-                            "fwdFee": "0",
-                            "createdLt": "0",
-                            "createdAt": "0"
-                        },
-                        "resultStack": [
-                            "0"
-                        ]
-                    },
-                    "ruleId": "user-defined-error"
-                },
-                {
-                    "codeFlows": [
-                        {
-                            "threadFlows": [
-                                {
-                                    "locations": [
-                                        {
-                                            "location": {
-                                                "logicalLocations": [
-                                                    {
-                                                        "fullyQualifiedName": "Lambda",
-                                                        "properties": {
-                                                            "stmt": "artificial_exit#1"
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    "locations": [
-                                        {
-                                            "location": {
-                                                "logicalLocations": [
-                                                    {
-                                                        "fullyQualifiedName": "Lambda",
-                                                        "properties": {
-                                                            "stmt": "IF#8"
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    "locations": [
-                                        {
-                                            "location": {
-                                                "logicalLocations": [
-                                                    {
-                                                        "decoratedName": "0",
-                                                        "properties": {
-                                                            "stmt": "IFJMP#26"
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    "locations": [
-                                        {
-                                            "location": {
-                                                "logicalLocations": [
-                                                    {
-                                                        "fullyQualifiedName": "Lambda",
-                                                        "properties": {
-                                                            "stmt": "DICTIGETJMPZ#2"
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ],
-                    "level": "error",
-                    "locations": [
-                        {
-                            "logicalLocations": [
-                                {
-                                    "decoratedName": "0"
-                                }
-                            ]
-                        }
-                    ],
-                    "message": {
-                        "text": "Reading of unexpected type: expected reading of org.ton.TlbIntegerLabelOfConcreteSize@4203529f, but read TvmTestCellDataIntegerRead(bitSize=32, isSigned=false, endian=BigEndian)"
-                    },
-                    "properties": {
-                        "gasUsage": 1150,
-                        "usedParameters": {
-                            "type": "recvInternalInput",
-                            "srcAddress": {
-                                "cell": {
-                                    "data": "100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
-                                }
-                            },
-                            "msgBody": {
-                                "cell": {
-                                    "data": "000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000",
-                                    "refs": [
-                                        {
-                                            "type": "org.usvm.test.resolver.TvmTestDataCellValue"
-                                        }
-                                    ],
-                                    "knownTypes": [
-                                        {
-                                            "type": {
-                                                "type": "org.usvm.test.resolver.TvmTestCellDataBitArrayRead",
-                                                "bitSize": 32
-                                            },
-                                            "offset": 0
-                                        },
-                                        {
-                                            "type": {
-                                                "type": "org.usvm.test.resolver.TvmTestCellDataIntegerRead",
-                                                "bitSize": 32,
-                                                "isSigned": false,
-                                                "endian": "BigEndian"
-                                            },
-                                            "offset": 32
-                                        }
-                                    ]
-                                }
-                            },
-                            "msgValue": "73786976294838206464",
-                            "bounce": false,
-                            "bounced": true,
-                            "ihrDisabled": false,
-                            "ihrFee": "0",
-                            "fwdFee": "0",
-                            "createdLt": "0",
-                            "createdAt": "0"
-                        },
-                        "resultStack": [
-                            "92233720368547758080",
-                            "-1",
-                            {
-                                "type": "org.usvm.test.resolver.TvmTestDataCellValue"
-                            },
-                            "0",
-                            {
-                                "type": "org.usvm.test.resolver.TvmTestSliceValue",
-                                "cell": {
-                                    "data": "0000100000000000100011010000110101000101100000001100110110001111000010010101001000101011111001111100000000111001000010100111101001100011001010111101101001001010100110010010100100011100010000110101101101110110011111001001010100110110011111101011111001111000111010011010111"
-                                },
-                                "dataPos": 4
-                            }
-                        ]
-                    },
-                    "ruleId": "unexpected-cell-type"
-                },
-                {
-                    "codeFlows": [
-                        {
-                            "threadFlows": [
-                                {
-                                    "locations": [
-                                        {
-                                            "location": {
-                                                "logicalLocations": [
-                                                    {
-                                                        "fullyQualifiedName": "Lambda",
-                                                        "properties": {
-                                                            "stmt": "artificial_exit#1"
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    "locations": [
-                                        {
-                                            "location": {
-                                                "logicalLocations": [
-                                                    {
-                                                        "fullyQualifiedName": "Lambda",
-                                                        "properties": {
-                                                            "stmt": "IF#8"
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    "locations": [
-                                        {
-                                            "location": {
-                                                "logicalLocations": [
-                                                    {
-                                                        "decoratedName": "0",
-                                                        "properties": {
-                                                            "stmt": "IFJMP#26"
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    "locations": [
-                                        {
-                                            "location": {
-                                                "logicalLocations": [
-                                                    {
-                                                        "fullyQualifiedName": "Lambda",
-                                                        "properties": {
-                                                            "stmt": "DICTIGETJMPZ#2"
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ],
-                    "level": "error",
-                    "locations": [
-                        {
-                            "logicalLocations": [
-                                {
-                                    "decoratedName": "0"
-                                }
-                            ]
-                        }
-                    ],
-                    "message": {
-                        "text": "Reading of unexpected type: expected reading of org.ton.TlbIntegerLabelOfConcreteSize@7d82ca56, but read TvmTestCellDataIntegerRead(bitSize=32, isSigned=false, endian=BigEndian)"
-                    },
-                    "properties": {
-                        "gasUsage": 1150,
-                        "usedParameters": {
-                            "type": "recvInternalInput",
-                            "srcAddress": {
-                                "cell": {
-                                    "data": "100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
-                                }
-                            },
-                            "msgBody": {
-                                "cell": {
-                                    "data": "0010110001110110101110010111001100000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-                                    "knownTypes": [
-                                        {
-                                            "type": {
-                                                "type": "org.usvm.test.resolver.TvmTestCellDataBitArrayRead",
-                                                "bitSize": 32
-                                            },
-                                            "offset": 0
-                                        },
-                                        {
-                                            "type": {
-                                                "type": "org.usvm.test.resolver.TvmTestCellDataIntegerRead",
-                                                "bitSize": 32,
-                                                "isSigned": false,
-                                                "endian": "BigEndian"
-                                            },
-                                            "offset": 32
-                                        }
-                                    ]
-                                }
-                            },
-                            "msgValue": "73786976294838206464",
-                            "bounce": false,
-                            "bounced": true,
-                            "ihrDisabled": false,
-                            "ihrFee": "0",
-                            "fwdFee": "0",
-                            "createdLt": "0",
-                            "createdAt": "0"
-                        },
-                        "resultStack": [
-                            "92233720368547758080",
-                            "-1",
-                            {
-                                "type": "org.usvm.test.resolver.TvmTestDataCellValue"
-                            },
-                            "0",
-                            {
-                                "type": "org.usvm.test.resolver.TvmTestSliceValue",
-                                "cell": {
-                                    "data": "0000100000000000100011010000110101000101100000001100110110001111000010010101001000101011111001111100000000111001000010100111101001100011001010111101101001001010100110010010100100011100010000110101101101110110011111001001010100110110011111101011111001111000111010011010111"
-                                },
-                                "dataPos": 4
-                            }
-                        ]
-                    },
-                    "ruleId": "unexpected-cell-type"
-                },
-                {
-                    "codeFlows": [
-                        {
-                            "threadFlows": [
-                                {
-                                    "locations": [
-                                        {
-                                            "location": {
-                                                "logicalLocations": [
-                                                    {
-                                                        "fullyQualifiedName": "Lambda",
-                                                        "properties": {
-                                                            "stmt": "artificial_exit#1"
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    "locations": [
-                                        {
-                                            "location": {
-                                                "logicalLocations": [
-                                                    {
-                                                        "fullyQualifiedName": "Lambda",
-                                                        "properties": {
-                                                            "stmt": "IF#8"
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    "locations": [
-                                        {
-                                            "location": {
-                                                "logicalLocations": [
-                                                    {
-                                                        "decoratedName": "0",
-                                                        "properties": {
-                                                            "stmt": "IFJMP#26"
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    "locations": [
-                                        {
-                                            "location": {
-                                                "logicalLocations": [
-                                                    {
-                                                        "fullyQualifiedName": "Lambda",
-                                                        "properties": {
-                                                            "stmt": "DICTIGETJMPZ#2"
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ],
-                    "level": "error",
-                    "locations": [
-                        {
-                            "logicalLocations": [
-                                {
-                                    "decoratedName": "0"
-                                }
-                            ]
-                        }
-                    ],
-                    "message": {
-                        "text": "Reading of unexpected type: expected reading of org.ton.TlbIntegerLabelOfConcreteSize@2aaa89c2, but read TvmTestCellDataIntegerRead(bitSize=32, isSigned=false, endian=BigEndian)"
-                    },
-                    "properties": {
-                        "gasUsage": 1150,
-                        "usedParameters": {
-                            "type": "recvInternalInput",
-                            "srcAddress": {
-                                "cell": {
-                                    "data": "100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
-                                }
-                            },
-                            "msgBody": {
-                                "cell": {
-                                    "data": "0111101111011101100101111101111000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-                                    "knownTypes": [
-                                        {
-                                            "type": {
-                                                "type": "org.usvm.test.resolver.TvmTestCellDataBitArrayRead",
-                                                "bitSize": 32
-                                            },
-                                            "offset": 0
-                                        },
-                                        {
-                                            "type": {
-                                                "type": "org.usvm.test.resolver.TvmTestCellDataIntegerRead",
-                                                "bitSize": 32,
-                                                "isSigned": false,
-                                                "endian": "BigEndian"
-                                            },
-                                            "offset": 32
-                                        }
-                                    ]
-                                }
-                            },
-                            "msgValue": "73786976294838206464",
-                            "bounce": false,
-                            "bounced": true,
-                            "ihrDisabled": false,
-                            "ihrFee": "0",
-                            "fwdFee": "0",
-                            "createdLt": "0",
-                            "createdAt": "0"
-                        },
-                        "resultStack": [
-                            "92233720368547758080",
-                            "-1",
-                            {
-                                "type": "org.usvm.test.resolver.TvmTestDataCellValue"
-                            },
-                            "0",
-                            {
-                                "type": "org.usvm.test.resolver.TvmTestSliceValue",
-                                "cell": {
-                                    "data": "0000100000000000100011010000110101000101100000001100110110001111000010010101001000101011111001111100000000111001000010100111101001100011001010111101101001001010100110010010100100011100010000110101101101110110011111001001010100110110011111101011111001111000111010011010111"
-                                },
-                                "dataPos": 4
-                            }
-                        ]
-                    },
-                    "ruleId": "unexpected-cell-type"
-                },
-                {
-                    "codeFlows": [
-                        {
-                            "threadFlows": [
-                                {
-                                    "locations": [
-                                        {
-                                            "location": {
-                                                "logicalLocations": [
-                                                    {
-                                                        "fullyQualifiedName": "Lambda",
-                                                        "properties": {
-                                                            "stmt": "artificial_exit#1"
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    "locations": [
-                                        {
-                                            "location": {
-                                                "logicalLocations": [
-                                                    {
-                                                        "fullyQualifiedName": "Lambda",
-                                                        "properties": {
-                                                            "stmt": "IF#8"
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    "locations": [
-                                        {
-                                            "location": {
-                                                "logicalLocations": [
-                                                    {
-                                                        "decoratedName": "0",
-                                                        "properties": {
-                                                            "stmt": "IFJMP#26"
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    "locations": [
-                                        {
-                                            "location": {
-                                                "logicalLocations": [
-                                                    {
-                                                        "fullyQualifiedName": "Lambda",
-                                                        "properties": {
-                                                            "stmt": "DICTIGETJMPZ#2"
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ],
-                    "level": "error",
-                    "locations": [
-                        {
-                            "logicalLocations": [
-                                {
-                                    "decoratedName": "0"
-                                }
-                            ]
-                        }
-                    ],
-                    "message": {
-                        "text": "Reading of unexpected type: expected reading of org.ton.TlbIntegerLabelOfConcreteSize@5a58db42, but read TvmTestCellDataIntegerRead(bitSize=32, isSigned=false, endian=BigEndian)"
-                    },
-                    "properties": {
-                        "gasUsage": 1150,
-                        "usedParameters": {
-                            "type": "recvInternalInput",
-                            "srcAddress": {
-                                "cell": {
-                                    "data": "100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
-                                }
-                            },
-                            "msgBody": {
-                                "cell": {
-                                    "data": "000000000000000000000000000000110000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-                                    "knownTypes": [
-                                        {
-                                            "type": {
-                                                "type": "org.usvm.test.resolver.TvmTestCellDataBitArrayRead",
-                                                "bitSize": 32
-                                            },
-                                            "offset": 0
-                                        },
-                                        {
-                                            "type": {
-                                                "type": "org.usvm.test.resolver.TvmTestCellDataIntegerRead",
-                                                "bitSize": 32,
-                                                "isSigned": false,
-                                                "endian": "BigEndian"
-                                            },
-                                            "offset": 32
-                                        }
-                                    ]
-                                }
-                            },
-                            "msgValue": "73786976294838206464",
-                            "bounce": false,
-                            "bounced": true,
-                            "ihrDisabled": false,
-                            "ihrFee": "0",
-                            "fwdFee": "0",
-                            "createdLt": "0",
-                            "createdAt": "0"
-                        },
-                        "resultStack": [
-                            "92233720368547758080",
-                            "-1",
-                            {
-                                "type": "org.usvm.test.resolver.TvmTestDataCellValue"
-                            },
-                            "0",
-                            {
-                                "type": "org.usvm.test.resolver.TvmTestSliceValue",
-                                "cell": {
-                                    "data": "0000100000000000100011010000110101000101100000001100110110001111000010010101001000101011111001111100000000111001000010100111101001100011001010111101101001001010100110010010100100011100010000110101101101110110011111001001010100110110011111101011111001111000111010011010111"
-                                },
-                                "dataPos": 4
-                            }
-                        ]
-                    },
-                    "ruleId": "unexpected-cell-type"
-                },
-                {
-                    "codeFlows": [
-                        {
-                            "threadFlows": [
-                                {
-                                    "locations": [
-                                        {
-                                            "location": {
-                                                "logicalLocations": [
-                                                    {
-                                                        "fullyQualifiedName": "Lambda",
-                                                        "properties": {
-                                                            "stmt": "artificial_exit#1"
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    "locations": [
-                                        {
-                                            "location": {
-                                                "logicalLocations": [
-                                                    {
-                                                        "fullyQualifiedName": "Lambda",
-                                                        "properties": {
-                                                            "stmt": "IF#8"
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    "locations": [
-                                        {
-                                            "location": {
-                                                "logicalLocations": [
-                                                    {
-                                                        "decoratedName": "0",
-                                                        "properties": {
-                                                            "stmt": "IFJMP#26"
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    "locations": [
-                                        {
-                                            "location": {
-                                                "logicalLocations": [
-                                                    {
-                                                        "fullyQualifiedName": "Lambda",
-                                                        "properties": {
-                                                            "stmt": "DICTIGETJMPZ#2"
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ],
-                    "level": "error",
-                    "locations": [
-                        {
-                            "logicalLocations": [
-                                {
-                                    "decoratedName": "0"
-                                }
-                            ]
-                        }
-                    ],
-                    "message": {
-                        "text": "Reading of unexpected type: expected reading of org.ton.TlbIntegerLabelOfConcreteSize@217fd3c, but read TvmTestCellDataIntegerRead(bitSize=32, isSigned=false, endian=BigEndian)"
-                    },
-                    "properties": {
-                        "gasUsage": 1150,
-                        "usedParameters": {
-                            "type": "recvInternalInput",
-                            "srcAddress": {
-                                "cell": {
-                                    "data": "100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
-                                }
-                            },
-                            "msgBody": {
-                                "cell": {
-                                    "data": "0110010000101011011111010000011100000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-                                    "refs": [
-                                        {
-                                            "type": "org.usvm.test.resolver.TvmTestDataCellValue",
-                                            "data": "000101111000110101000101000110010000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
-                                        }
-                                    ],
-                                    "knownTypes": [
-                                        {
-                                            "type": {
-                                                "type": "org.usvm.test.resolver.TvmTestCellDataBitArrayRead",
-                                                "bitSize": 32
-                                            },
-                                            "offset": 0
-                                        },
-                                        {
-                                            "type": {
-                                                "type": "org.usvm.test.resolver.TvmTestCellDataIntegerRead",
-                                                "bitSize": 32,
-                                                "isSigned": false,
-                                                "endian": "BigEndian"
-                                            },
-                                            "offset": 32
-                                        }
-                                    ]
-                                }
-                            },
-                            "msgValue": "73786976294838206464",
-                            "bounce": false,
-                            "bounced": true,
-                            "ihrDisabled": false,
-                            "ihrFee": "0",
-                            "fwdFee": "0",
-                            "createdLt": "0",
-                            "createdAt": "0"
-                        },
-                        "resultStack": [
-                            "92233720368547758080",
-                            "-1",
-                            {
-                                "type": "org.usvm.test.resolver.TvmTestDataCellValue"
-                            },
-                            "0",
-                            {
-                                "type": "org.usvm.test.resolver.TvmTestSliceValue",
-                                "cell": {
-                                    "data": "0000100000000000100011010000110101000101100000001100110110001111000010010101001000101011111001111100000000111001000010100111101001100011001010111101101001001010100110010010100100011100010000110101101101110110011111001001010100110110011111101011111001111000111010011010111"
-                                },
-                                "dataPos": 4
-                            }
-                        ]
-                    },
-                    "ruleId": "unexpected-cell-type"
-                },
-                {
-                    "codeFlows": [
-                        {
-                            "threadFlows": [
-                                {
-                                    "locations": [
-                                        {
-                                            "location": {
-                                                "logicalLocations": [
-                                                    {
-                                                        "fullyQualifiedName": "Lambda",
-                                                        "properties": {
-                                                            "stmt": "artificial_exit#1"
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    "locations": [
-                                        {
-                                            "location": {
-                                                "logicalLocations": [
-                                                    {
-                                                        "fullyQualifiedName": "Lambda",
-                                                        "properties": {
-                                                            "stmt": "IF#8"
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    "locations": [
-                                        {
-                                            "location": {
-                                                "logicalLocations": [
-                                                    {
-                                                        "decoratedName": "0",
-                                                        "properties": {
-                                                            "stmt": "IFJMP#26"
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    "locations": [
-                                        {
-                                            "location": {
-                                                "logicalLocations": [
-                                                    {
-                                                        "fullyQualifiedName": "Lambda",
-                                                        "properties": {
-                                                            "stmt": "DICTIGETJMPZ#2"
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ],
-                    "level": "error",
-                    "locations": [
-                        {
-                            "logicalLocations": [
-                                {
-                                    "decoratedName": "0"
-                                }
-                            ]
-                        }
-                    ],
-                    "message": {
-                        "text": "Reading of unexpected type: expected reading of TlbFullMsgAddrLabel, but read TvmTestCellDataIntegerRead(bitSize=32, isSigned=false, endian=BigEndian)"
-                    },
-                    "properties": {
-                        "gasUsage": 1150,
-                        "usedParameters": {
-                            "type": "recvInternalInput",
-                            "srcAddress": {
-                                "cell": {
-                                    "data": "100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
-                                }
-                            },
-                            "msgBody": {
-                                "cell": {
-                                    "data": "00000011100100111011000111001110100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-                                    "knownTypes": [
-                                        {
-                                            "type": {
-                                                "type": "org.usvm.test.resolver.TvmTestCellDataBitArrayRead",
-                                                "bitSize": 32
-                                            },
-                                            "offset": 0
-                                        },
-                                        {
-                                            "type": {
-                                                "type": "org.usvm.test.resolver.TvmTestCellDataIntegerRead",
-                                                "bitSize": 32,
-                                                "isSigned": false,
-                                                "endian": "BigEndian"
-                                            },
-                                            "offset": 32
-                                        }
-                                    ]
-                                }
-                            },
-                            "msgValue": "73786976294838206464",
-                            "bounce": false,
-                            "bounced": true,
-                            "ihrDisabled": false,
-                            "ihrFee": "0",
-                            "fwdFee": "0",
-                            "createdLt": "0",
-                            "createdAt": "0"
-                        },
-                        "resultStack": [
-                            "92233720368547758080",
-                            "-1",
-                            {
-                                "type": "org.usvm.test.resolver.TvmTestDataCellValue"
-                            },
-                            "0",
-                            {
-                                "type": "org.usvm.test.resolver.TvmTestSliceValue",
-                                "cell": {
-                                    "data": "0000100000000000100011010000110101000101100000001100110110001111000010010101001000101011111001111100000000111001000010100111101001100011001010111101101001001010100110010010100100011100010000110101101101110110011111001001010100110110011111101011111001111000111010011010111"
-                                },
-                                "dataPos": 4
-                            }
-                        ]
-                    },
-                    "ruleId": "unexpected-cell-type"
                 }
             ],
             "tool": {
